@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useSounds } from '@/lib/sounds';
 import confetti from 'canvas-confetti';
 
+import Image from "next/image";
+
 interface WinningAnimationProps {
   isVisible: boolean;
   onClose: () => void;
@@ -101,7 +103,7 @@ export function WinningAnimation({ isVisible, onClose }: WinningAnimationProps) 
           
           {/* Main content */}
           <motion.div
-            className="relative z-10 max-w-3xl w-full mx-4 flex flex-col items-center justify-center"
+            className="relative z-10 max-w-4xl w-full mx-4 flex flex-col items-center justify-center"
             initial={{ scale: 0.5, y: 100 }}
             animate={{ 
               scale: 1, 
@@ -110,22 +112,29 @@ export function WinningAnimation({ isVisible, onClose }: WinningAnimationProps) 
             }}
             exit={{ scale: 0.5, y: 100, opacity: 0, transition: { duration: 0.3 } }}
           >
-            {/* Trophy icon */}
+            {/* Win Image */}
             <motion.div
-              initial={{ y: -50, opacity: 0 }}
+              initial={{ y: -50, opacity: 0, scale: 0.8 }}
               animate={{ 
                 y: 0, 
                 opacity: 1,
-                transition: { delay: 0.3, duration: 0.5 }
+                scale: 1,
+                transition: { delay: 0.2, duration: 0.8, type: "spring" }
               }}
-              className="text-9xl text-yellow-300 mb-6"
+              className="relative w-full max-w-md h-64 sm:h-80 mb-6 drop-shadow-[0_0_35px_rgba(255,215,0,0.6)]"
             >
-              🏆
+              <Image 
+                src="/images/win-2026.png" 
+                alt="BINGO WIN!" 
+                fill 
+                className="object-contain"
+                priority
+              />
             </motion.div>
             
             {/* Main text */}
             <motion.div
-              className="bg-gradient-to-r from-amber-500 to-yellow-500 p-8 rounded-2xl shadow-[0_0_40px_rgba(245,158,11,0.8)] text-center transform"
+              className="bg-gradient-to-r from-amber-600/90 to-yellow-600/90 p-6 sm:p-8 rounded-2xl shadow-[0_0_40px_rgba(245,158,11,0.8)] text-center transform backdrop-blur-md border border-yellow-400/30"
               animate={{
                 boxShadow: [
                   '0 0 40px rgba(245,158,11,0.8)',

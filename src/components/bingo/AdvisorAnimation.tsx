@@ -82,7 +82,7 @@ export function AdvisorAnimation({
   }
 
   const teamAdvisor = useGameStore(state => state.teamAdvisor as string | null);
-  const wins = useGameStore(state => state.wins as any[]);
+  const wins = useGameStore(state => state.previousWins as any[]);
   const markedSquares = useGameStore(state => state.markedSquares as [number, number][]);
   const [currentGif, setCurrentGif] = React.useState<string>('');
   const [lastInteractionTime, setLastInteractionTime] = React.useState<number>(Date.now());

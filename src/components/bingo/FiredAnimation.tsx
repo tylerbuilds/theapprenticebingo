@@ -67,7 +67,7 @@ export function FiredAnimation({ isVisible, onClose }: FiredAnimationProps) {
           >
             <div className="relative overflow-hidden rounded-lg shadow-[0_0_30px_10px_rgba(220,38,38,0.5)]">
               <Image
-                src={imageError ? "/images/alansugar.jpg" : "/images/youre-fired.jpg"}
+                src={imageError ? "/images/alansugar.jpg" : "/images/fired-2026.png"}
                 alt="You're Fired!"
                 width={800}
                 height={450}

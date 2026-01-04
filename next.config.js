@@ -2,6 +2,16 @@
 
 const nextConfig = {
   reactStrictMode: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'apprentice-bingo.tylerbuilds.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   typescript: {
     // !! WARN !!
     // Disabling type checking for build performance in production

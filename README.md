@@ -1,87 +1,64 @@
-# Apprentice Bingo
+# Apprentice Bingo (2026 Edition) 🇬🇧
 
-A fun, interactive game based on The Apprentice TV show. Play along while watching the show and mark events as they happen!
+The ultimate interactive companion for **The Apprentice (UK)**. Completely rebuilt for the 2026 season with next-gen graphics, immersive sound effects, and a sleek, futuristic interface.
 
-## Features
+**Live Site:** [apprentice-bingo.tylerbuilds.com](https://apprentice-bingo.tylerbuilds.com)
 
-- 3x3 bingo card with randomized events from The Apprentice
-- Interactive animations with Lord Sugar and his advisors
-- Fun facts about the show
-- Win animations and sound effects
-- Responsive design for both desktop and mobile
+## ✨ New 2026 Features
 
-## Technology Stack
+*   **Futuristic Visuals**: A breathtaking London skyline background and frosted glassmorphism UI.
+*   **3D Celebration Effects**: Golden 3D "BINGO!" explosions and digital confetti.
+*   **Dramatic "Fired" Screen**: High-impact animation when you lose or reset.
+*   **Immersive Audio**: Professional sound design for clicks, wins, and boardroom drama.
+*   **Neon Glow Aesthetics**: Interactive glowing bingo squares.
 
-- Next.js
-- React
-- TypeScript
-- Zustand for state management
-- Tailwind CSS with Shadcn UI components
-- Framer Motion for animations
+## 🚀 Features
 
-## Getting Started
+*   **Smart Bingo Grid**: 3x3 grid with randomized, classic Apprentice tropes (e.g., "I give 110%", "The Bridge Scene").
+*   **Interactive Advisors**: Animated reactions from Lord Sugar, Karren, and Tim.
+*   **Multi-Mode**: Play classic lines, full house, or speed bingo.
+*   **Responsive Design**: Perfect for playing on your phone while watching the TV.
 
-### Prerequisites
+## 🛠️ Technology Stack
 
-- Node.js 16.x or higher
-- npm or yarn
+*   **Framework**: Next.js 14 (App Router)
+*   **Styling**: Tailwind CSS + Shadcn UI + Framer Motion
+*   **State**: Zustand
+*   **Assets**: AI-Generated 2026 Asset Pack (Gemini 2.5 Flash)
+
+## 📦 Getting Started
 
 ### Installation
 
-1. Clone the repository
-2. Install dependencies:
-
 ```bash
+git clone https://github.com/tylerbuilds/theapprenticebingo
+cd theapprenticebingo
 npm install
-# or
-yarn install
 ```
 
-3. Start the development server:
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
+# Open http://localhost:3000
 ```
 
-4. Open your browser and navigate to `http://localhost:3000`
-
-## Testing
-
-The application includes a comprehensive test suite using Jest and React Testing Library.
-
-### Running Tests
+### Build
 
 ```bash
-# Run all tests
-npm test
-
-# Run tests in watch mode (for development)
-npm run test:watch
-
-# Run tests with coverage report
-npm run test:coverage
+npm run build
+npm start
 ```
 
-### Test Structure
+## 🎮 Game Rules
 
-Tests are organized in `__tests__` directories alongside the components or modules they test:
-
-- Component tests: `src/components/bingo/__tests__/`
-- Store tests: `src/lib/store/__tests__/`
-- Page tests: `src/app/__tests__/`
-
-For more detailed information about testing, see [TESTING.md](TESTING.md).
-
-## Game Rules
-
-1. Start a new game
-2. Events will be randomly placed on your bingo card
-3. Mark events as they happen during the show
-4. Complete a row, column, or diagonal to win!
+1.  **Watch** *The Apprentice* live.
+2.  **Mark** events on your card as they happen on screen.
+3.  **Win** by completing a Line (Row/Column/Diagonal) or a Full House!
+4.  **Avoid** getting fired!
 
 ## Credits
 
-- All Apprentice-related content belongs to their respective owners
-- Created with ❤️ for fans of The Apprentice 
+*   Original concept by TylerBuilds.
+*   2026 Remaster by [Your Name/AI Agent].
+*   *The Apprentice* rights belong to their respective owners.

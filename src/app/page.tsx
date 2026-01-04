@@ -136,7 +136,7 @@ export default function Home() {
               variants={fadeIn}
             >
               {/* Subtle boardroom pattern */}
-              <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-[url('/images/card-texture-2026.png')] opacity-10 pointer-events-none mix-blend-overlay"></div>
               
               {/* Ensure GameModeSelect is in front and can receive events */}
               <div className="relative z-10">
@@ -157,7 +157,7 @@ export default function Home() {
         animate="visible"
         variants={staggerChildren}
       >
-        <ParallaxBackground src="/images/team.jpg" opacity={0.4}>
+        <ParallaxBackground src="/images/bg-2026.png" opacity={0.4}>
           <div className="h-40 sm:h-60 md:h-80 flex items-center justify-center bg-black/40">
             <motion.h1 
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-center drop-shadow-lg px-4"
@@ -188,7 +188,7 @@ export default function Home() {
               variants={fadeIn}
             >
               {/* Subtle boardroom pattern */}
-              <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-[url('/images/card-texture-2026.png')] opacity-10 pointer-events-none mix-blend-overlay"></div>
               
               {/* Ensure TeamSelector is in front and can receive events */}
               <div className="relative z-10">
@@ -210,7 +210,7 @@ export default function Home() {
         variants={staggerChildren}
         key="main-game"
       >
-        <ParallaxBackground src="/images/alansugar.jpg" opacity={0.7} overlay={true}>
+        <ParallaxBackground src="/images/bg-2026.png" opacity={0.7} overlay={true}>
           <div className="h-24 sm:h-28 md:h-32 flex items-center justify-center">
             <motion.h1 
               className="text-2xl sm:text-3xl md:text-4xl font-bold text-center drop-shadow-lg px-4"

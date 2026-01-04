@@ -58,29 +58,35 @@ export function BingoSquare({ index, content, isSelected, isLocked, isWinning = 
       onClick={handleClick}
       disabled={isLocked}
       whileTap={{ scale: isLocked ? 1 : 0.95 }}
-      whileHover={!isLocked ? { scale: 1.03 } : {}}
+      whileHover={!isLocked ? { scale: 1.03, boxShadow: "0 0 15px rgba(255, 255, 255, 0.3)" } : {}}
       animate={{ 
         scale: isWinning ? [1, 1.1, 1] : 1,
         boxShadow: isWinning ? [
           "0 0 0 rgba(212, 175, 55, 0)",
-          "0 0 20px rgba(212, 175, 55, 0.7)",
+          "0 0 30px rgba(212, 175, 55, 0.9)",
           "0 0 0 rgba(212, 175, 55, 0)"
-        ] : "none"
+        ] : isActive ? "0 0 15px rgba(245, 158, 11, 0.6)" : "none",
+        borderColor: isActive ? "rgba(245, 158, 11, 0.8)" : "rgba(75, 85, 99, 0.5)"
       }}
       transition={{ 
         duration: isWinning ? 0.8 : 0.2,
         repeat: isWinning ? 3 : 0,
         repeatType: "loop"
       }}
+      style={{
+        backgroundImage: isActive ? "linear-gradient(135deg, rgba(245, 158, 11, 0.9), rgba(217, 119, 6, 0.95))" : "url('/images/card-texture-2026.png')",
+        backgroundSize: "cover",
+        backgroundBlendMode: "overlay"
+      }}
       className={cn(
         "relative w-full aspect-square px-1 py-1 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200",
-        "flex items-center justify-center",
-        "shadow-md bg-opacity-90 backdrop-blur-sm",
+        "flex items-center justify-center border border-gray-600/50",
+        "shadow-lg backdrop-blur-md",
         isActive
-          ? "bg-gradient-to-br from-amber-300 to-amber-500 text-black" 
-          : "bg-gradient-to-br from-gray-700 to-gray-900 text-white hover:from-gray-600 hover:to-gray-800",
-        isLocked && "cursor-not-allowed opacity-70",
-        isWinning && "z-10"
+          ? "text-black font-bold" 
+          : "bg-gray-800/90 text-white hover:bg-gray-700/90",
+        isLocked && "cursor-not-allowed opacity-70 grayscale",
+        isWinning && "z-10 ring-2 ring-yellow-400 ring-offset-2 ring-offset-black"
       )}
       data-selected={isActive}
       data-testid={`bingo-square-${row}-${col}`}
