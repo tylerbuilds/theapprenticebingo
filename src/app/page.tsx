@@ -15,6 +15,7 @@ import { useSounds } from "@/lib/sounds";
 import { fadeIn, slideInFromBottom, slideInFromLeft, slideInFromRight, staggerChildren, boardroomBackground } from "@/lib/animations";
 import { AdvisorAnimation } from "@/components/bingo/AdvisorAnimation";
 import { WinsList } from "@/components/bingo/WinsList";
+import { Footer } from "@/components/bingo/Footer";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 
 // Helper function to format advisor name for display
@@ -131,13 +132,13 @@ export default function Home() {
         
         <div className="container mx-auto px-2 py-4 md:py-6 flex-1 relative">
           <div className="max-w-2xl mx-auto">
-            <motion.div 
+            <motion.div
               className="bg-gradient-to-b from-gray-800 to-gray-900 p-3 sm:p-4 rounded-lg shadow-xl border border-gray-700 relative overflow-hidden"
               variants={fadeIn}
             >
               {/* Subtle boardroom pattern */}
               <div className="absolute inset-0 bg-[url('/images/card-texture-2026.png')] opacity-10 pointer-events-none mix-blend-overlay"></div>
-              
+
               {/* Ensure GameModeSelect is in front and can receive events */}
               <div className="relative z-10">
                 <GameModeSelect />
@@ -145,6 +146,9 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
+
+        {/* Footer */}
+        <Footer />
       </motion.main>
     );
   }
@@ -183,13 +187,13 @@ export default function Home() {
         
         <div className="container mx-auto px-4 py-6 md:py-12 flex-1">
           <div className="max-w-2xl mx-auto">
-            <motion.div 
+            <motion.div
               className="bg-gradient-to-b from-gray-800 to-gray-900 p-4 sm:p-8 rounded-lg shadow-2xl border border-gray-700 overflow-hidden relative"
               variants={fadeIn}
             >
               {/* Subtle boardroom pattern */}
               <div className="absolute inset-0 bg-[url('/images/card-texture-2026.png')] opacity-10 pointer-events-none mix-blend-overlay"></div>
-              
+
               {/* Ensure TeamSelector is in front and can receive events */}
               <div className="relative z-10">
                 <TeamSelector />
@@ -197,6 +201,9 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
+
+        {/* Footer */}
+        <Footer />
       </motion.main>
     );
   }
@@ -444,6 +451,9 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
+
+        {/* Footer */}
+        <Footer />
       </motion.main>
     </AnimatePresence>
   );
