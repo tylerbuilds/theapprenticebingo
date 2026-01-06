@@ -94,7 +94,7 @@ export function BingoSquare({ index, content, isSelected, isLocked, isWinning = 
     >
       {/* Content */}
       <div className="text-center px-0.5 flex-1 flex items-center justify-center min-h-[2.5rem] sm:min-h-[3.5rem] md:min-h-[4rem] text-xs sm:text-sm">
-        {content}
+        {content && content.trim().length > 0 ? content : "???"}
       </div>
       
       {/* Checkmark overlay */}

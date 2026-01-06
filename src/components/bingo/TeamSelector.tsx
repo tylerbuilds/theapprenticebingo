@@ -23,7 +23,11 @@ type AdvisorId = typeof ADVISORS[number]['id'];
 
 export function TeamSelector() {
   const [teamName, setTeamName] = React.useState("");
-  const [advisor, setAdvisor] = React.useState<AdvisorId>('karen');
+  // Random advisor on first load, but can be changed by user
+  const [advisor, setAdvisor] = React.useState<AdvisorId>(() => {
+    const advisors: AdvisorId[] = ['karen', 'tim', 'claude', 'nick', 'margaret'];
+    return advisors[Math.floor(Math.random() * advisors.length)];
+  });
   const gameId = useGameStore(state => state.gameId);
   const teams = useGameStore(state => state.teams);
   const isHost = useGameStore(state => state.isHost);

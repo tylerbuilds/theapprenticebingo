@@ -242,22 +242,22 @@ export default function Home() {
         <div className="container mx-auto px-2 py-2 sm:py-3">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-2 md:gap-3 lg:gap-4">
             {/* Left sidebar - Game mode selection and Facts */}
-            <motion.div 
-              className="lg:col-span-3 order-2 lg:order-1"
+            <motion.div
+              className="lg:col-span-3 order-2 lg:order-1 h-full flex flex-col gap-2 sm:gap-3"
               variants={slideInFromLeft}
               custom={1}
             >
-              <motion.div 
-                className="bg-gradient-to-b from-gray-800 to-gray-900 p-2 sm:p-3 rounded-lg shadow-xl border border-gray-700 relative overflow-hidden mb-3"
+              <motion.div
+                className="bg-gradient-to-b from-gray-800 to-gray-900 p-2 sm:p-3 rounded-lg shadow-xl border border-gray-700 relative overflow-hidden flex-shrink-0"
                 whileHover={{ boxShadow: "0 0 25px rgba(245, 158, 11, 0.15)" }}
                 transition={{ duration: 0.3 }}
               >
                 {/* Subtle boardroom pattern */}
                 <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5 pointer-events-none"></div>
-                
+
                 <motion.div className="relative z-10">
                   {/* Apprentice Facts Component - Moved from right sidebar */}
-                  <motion.div 
+                  <motion.div
                     variants={slideInFromBottom}
                     custom={2}
                   >
@@ -267,28 +267,23 @@ export default function Home() {
               </motion.div>
 
               {isHost && (
-                <motion.div 
-                  className="bg-gradient-to-b from-gray-800 to-gray-900 p-2 sm:p-3 rounded-lg shadow-xl border border-gray-700 relative overflow-hidden"
+                <motion.div
+                  className="bg-gradient-to-b from-gray-800 to-gray-900 p-2 sm:p-3 rounded-lg shadow-xl border border-gray-700 relative overflow-hidden flex-1"
                   whileHover={{ boxShadow: "0 0 25px rgba(245, 158, 11, 0.15)" }}
                   transition={{ duration: 0.3 }}
                 >
                   {/* Subtle boardroom pattern */}
                   <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5 pointer-events-none"></div>
-                  
-                  <motion.div className="relative z-10">
+
+                  <motion.div className="relative z-10 h-full flex flex-col">
                     {/* Game Mode with Alan Sugar animation */}
-                    <div className="bg-white rounded-lg overflow-hidden shadow-md">
-                      <div className="p-3">
-                        <h3 className="text-black text-lg font-semibold mb-2">Game Mode</h3>
-                        <p className="text-gray-600 text-sm mb-4">
-                          Select how players can win the game
-                        </p>
-                        
+                    <div className="bg-white rounded-lg shadow-md flex-1 flex flex-col">
+                      <div className="p-3 flex-1 flex flex-col">
                         <GameModeSelector />
-                        
+
                         {/* Alan Sugar animation inside the white section */}
-                        <motion.div 
-                          className="mt-4 flex items-center justify-center"
+                        <motion.div
+                          className="mt-4 flex items-center justify-center flex-1"
                           whileHover={{ scale: 1.02 }}
                           transition={{ type: "spring", stiffness: 300, damping: 15 }}
                         >
@@ -306,17 +301,20 @@ export default function Home() {
               )}
 
               {!isHost && (
-                <motion.div 
-                  className="mt-3 flex items-center justify-center"
+                <motion.div
+                  className="bg-gradient-to-b from-gray-800 to-gray-900 p-2 sm:p-3 rounded-lg shadow-xl border border-gray-700 relative overflow-hidden flex-1"
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}
                 >
-                  <AdvisorAnimation
-                    type="lord-sugar"
-                    size="medium"
-                    className="rounded-lg shadow-lg transition-transform duration-300 border border-amber-700/20"
-                    forceVideo={true}
-                  />
+                  <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5 pointer-events-none"></div>
+                  <motion.div className="relative z-10 h-full flex items-center justify-center">
+                    <AdvisorAnimation
+                      type="lord-sugar"
+                      size="medium"
+                      className="rounded-lg shadow-lg transition-transform duration-300 border border-amber-700/20"
+                      forceVideo={true}
+                    />
+                  </motion.div>
                 </motion.div>
               )}
             </motion.div>
@@ -339,26 +337,26 @@ export default function Home() {
                 </div>
               </motion.div>
               
-              <motion.div 
+              <motion.div
                 className="bg-gradient-to-b from-gray-800 to-gray-900 p-2 sm:p-3 rounded-lg shadow-xl border border-gray-700 relative overflow-hidden"
                 whileHover={{ y: -3, boxShadow: "0 20px 30px rgba(0, 0, 0, 0.3)" }}
                 transition={{ duration: 0.3 }}
               >
                 {/* Subtle boardroom pattern */}
                 <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5 pointer-events-none"></div>
-                <div className="relative z-10">
+                <div className="relative z-10 h-full">
                   <GameControls />
                 </div>
               </motion.div>
             </motion.div>
 
             {/* Right sidebar - Leaderboard */}
-            <motion.div 
-              className="lg:col-span-3 order-3"
+            <motion.div
+              className="lg:col-span-3 order-3 h-full"
               variants={slideInFromRight}
               custom={1}
             >
-              <motion.div 
+              <motion.div
                 className="bg-gradient-to-b from-gray-800 to-gray-900 p-2 sm:p-3 rounded-lg shadow-xl border border-amber-800/30 h-full relative overflow-hidden"
                 whileHover={{ boxShadow: "0 0 25px rgba(245, 158, 11, 0.15)" }}
                 transition={{ duration: 0.3 }}

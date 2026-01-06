@@ -298,10 +298,15 @@ export function BingoGrid() {
           const row = Math.floor(index / 3);
           const col = index % 3;
           const isSelected = markedSquares.some(([r, c]) => r === row && c === col);
-          const isWinning = lastWin && lastWin.squares ? 
-            lastWin.squares.some(([r, c]) => r === row && c === col) : 
+          const isWinning = lastWin && lastWin.squares ?
+            lastWin.squares.some(([r, c]) => r === row && c === col) :
             false;
-          
+
+          // Safety check: ensure content is valid
+          const safeContent = (content && typeof content === 'string' && content.trim().length > 0)
+            ? content
+            : `Square ${index + 1}`;
+
           return (
             <motion.div
               key={`square-${row}-${col}`}
@@ -311,10 +316,10 @@ export function BingoGrid() {
               variants={gridItemVariants}
               className="w-full"
             >
-              <BingoSquare 
+              <BingoSquare
                 key={index}
                 index={index}
-                content={content}
+                content={safeContent}
                 isSelected={isSelected}
                 isLocked={isLocked}
                 isWinning={isWinning}
